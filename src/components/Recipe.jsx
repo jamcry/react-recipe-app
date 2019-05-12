@@ -12,14 +12,16 @@ const Recipe = ({ title, calories, image, ingredients }) => {
       />
       <div className="card-body">
         <h4 className="card-title">{title}</h4>
-        <p className="card-text">{calories}</p>
-        <ul className="card-text">
+        <p className="card-text">{parseInt(calories) + " kcal"}</p>
+        <ul className="card-text list-group">
           {ingredients.map(i => (
-            <li key={title}>{i.text}</li>
+            <li key={title} className="list-group-item">
+              {i.text.substring(0, 30) + "..."}
+            </li>
           ))}
         </ul>
         <a href="#!" className="btn btn-primary">
-          Go somewhere
+          See Recipe
         </a>
       </div>
     </div>
