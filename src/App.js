@@ -36,7 +36,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="container">
       <form onSubmit={getSearch} className="search-form">
         <input
           onChange={updateSearch}
@@ -48,16 +48,19 @@ function App() {
           Search
         </button>
       </form>
-      {recipes.map(r => (
-        <Recipe
-          key={r.recipe.label}
-          title={r.recipe.label}
-          calories={r.recipe.calories}
-          image={r.recipe.image}
-          ingredients={r.recipe.ingredients}
-        />
-      ))}
-      ;
+      <div className="card-columns">
+        <br />
+        {recipes.map(r => (
+          <Recipe
+            key={r.recipe.label}
+            title={r.recipe.label}
+            calories={r.recipe.calories}
+            image={r.recipe.image}
+            ingredients={r.recipe.ingredients}
+          />
+        ))}
+        ;
+      </div>
     </div>
   );
 }
