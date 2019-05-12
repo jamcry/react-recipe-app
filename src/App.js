@@ -37,19 +37,22 @@ function App() {
 
   return (
     <div className="container">
-      <form onSubmit={getSearch} className="search-form">
-        <input
-          onChange={updateSearch}
-          className="search-bar"
-          type="text"
-          value={search}
-        />
-        <button className="search-button" type="submit">
-          Search
-        </button>
-      </form>
+      <nav className="navbar fixed-top navbar-light bg-light">
+        <form onSubmit={getSearch} className="input-group">
+          <h1 className="navbar-brand">Recipe Search App</h1>
+          <input
+            onChange={updateSearch}
+            className="form-control-lg"
+            type="text"
+            value={search}
+          />
+          <button className="btn btn-primary" type="submit">
+            Search
+          </button>
+        </form>
+      </nav>
+      <br />
       <div className="card-columns">
-        <br />
         {recipes.map(r => (
           <Recipe
             key={r.recipe.label}
